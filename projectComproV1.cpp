@@ -100,7 +100,6 @@ int main(){
             cout<< space << "Please input your phone number : " ;
             cin >> number ;
             system("cls") ;
-
         Shownamehotel() ;
             cout << endl ;
             cout<< space << "Please input your presonal information"<<endl;
