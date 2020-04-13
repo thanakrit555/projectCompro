@@ -7,11 +7,8 @@ using namespace std;
 #ifdef _MSC_VER
 #define getch() _getch()
 #endif
-
 using namespace std ;
-
 void Shownamehotel(){
-
     cout << "                           **************************************************************\n" ;
     cout << "                           * *  *                                                  *  * *\n" ;
     cout << "                           **  *                                                    *  **\n" ;
@@ -19,23 +16,17 @@ void Shownamehotel(){
     cout << "                           **  *                                                    *  **\n" ;
     cout << "                           * *  *                                                  *  * *\n" ;
     cout << "                           **************************************************************\n" ;
-    
 }
-
 void moveText(string inputStr, int scrLen)
 {
     string displatScr="";
     int inputStrLen=inputStr.length();
-
     if(inputStrLen<scrLen)
     {
-
         inputStr.append(scrLen-inputStrLen,' ');
         inputStrLen=inputStr.length();
     }
-
     int i=0,j=0;
-
     while(true)
     {
         if(i+scrLen<inputStrLen)
@@ -46,7 +37,6 @@ void moveText(string inputStr, int scrLen)
         }
         else
         {
-
             displatScr=inputStr.substr(i,inputStrLen-i)+inputStr.substr(0,j);
             cout << displatScr << endl;
             system("cls");
@@ -63,7 +53,6 @@ void moveText(string inputStr, int scrLen)
         }
     }
 }
-
 int main(){
     int age , hmn , room , hmr ,room1 ,room2, sum1,sum2 ,total ,yn,g ;
     string name ,surname, wf ,number ;
@@ -83,7 +72,6 @@ int main(){
         nameroom.push_back(room) ;
         roompass.push_back(pass) ;
     }
-
     do
     {
         system("cls");
@@ -100,7 +88,6 @@ int main(){
             cout<< space << "Please input your phone number : " ;
             cin >> number ;
             system("cls") ;
-
         Shownamehotel() ;
             cout << endl ;
             cout<< space << "Please input your presonal information"<<endl;
@@ -164,12 +151,9 @@ int main(){
                 for(int i =0 ; i<room1 ; i++){
                 cout<<space << nameroom[i] <<" password is :"<<roompass[i]<<endl ;
                 }
-            
-            
                 for(int j =6 ; j<room2;j++){
                 cout<<space << nameroom[j] <<" password is :"<<roompass[j]<<endl ;
                 }
-            
             cout << endl ;
             cout << space << "**************************************************************" << endl ;
             cout << endl ;
@@ -178,6 +162,5 @@ int main(){
             cin.get();
             moveText("***************THANKS COMPLATION LIST*************Thank you for booking***************",113) ;
         }
-    
     return 0 ;
 }
