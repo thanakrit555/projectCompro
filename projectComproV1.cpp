@@ -116,8 +116,7 @@ int main(){
             cin>>wf ;
             cout<< space << "How many night ? :" ;
             cin>>hmn ;
-           /* cout<< space << "How many guests will thre be ? :" ;
-            cin >> g  ;*/
+            do{
             cout<<space << "And would you like a room ?"<<endl ;
             cout << space <<  "1. A double room. 600 bath/night :";
             cin >> room1  ;
@@ -125,6 +124,11 @@ int main(){
             cout << space <<  "2. A twin room. 800 bath/night :" ;
             cin >> room2 ;
             sum2=(800*room2)*hmn;
+            if(room1 >= 7 || room2 >=7){
+                cout << space << "This hotel has double rooms and twin rooms 6 rooms each."<<endl ;
+            }
+            }
+            while(room1 >= 7 || room2 >=7) ;
             total = sum1+sum2 ;
             cout<< space << "Price : "<<total<<" bath"<<endl ;
         system("cls") ;
@@ -134,7 +138,6 @@ int main(){
             cout<< space << "Tel. : "<<number<<endl ;
             cout<< space << "Day "<<wf<<endl ;
             cout<< space << "How long will you stay : "<<hmn<<" night"<<endl ;
-           // cout<< space << "guests : "<<g<<" people"<<endl;
             cout<< space << " 1. A double room. : "<<room1<<endl ;
             cout<< space << " 2. A twin room. : "<<room2<<endl ;
             cout<< space << "Price : "<<total<<" bath"<<endl ;
