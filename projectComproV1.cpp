@@ -93,10 +93,10 @@ void reservation(){
             cout<< space << "Age  : "<<age <<endl ;
             cout<< space << "Phone number :"<< number <<endl;
             cout<< space << "______________________________________________________________"<<endl<<endl ;
-            cout<< space << "When for ?"<<endl ;
+            cout<< space << "When do you come?"<<endl ;
             cout<< space << "Day (d/m/25xx) :" ;
             cin>>wf ;
-            cout<< space << "How many night ? :" ;
+            cout<< space << "How long will you be staying?:" ;
             cin>>hmn ;
             do{
             cout<<space << "And would you like a room ?"<<endl ;
