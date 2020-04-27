@@ -159,15 +159,15 @@ int main(){
     string word ;
     int start = 0 ;
     Shownamehotel() ;
-    cout << "Hotel: Hello can you tell me your name ?\n";
-    cout << "??????:" ;
-    getline(cin,name) ;
-    cout << "Hotel: Is there anything We can help you with ?\n" ;
-    cout << name << ": " ;
+    cout << "Hotel: Hello Compro project Hotel. May I help you? \n";
+    cout << "user: "; 
+    getline(cin,help) ; 
+    cout << "Hotel: Would you like a single or a double room? \n" ; 
+    cout << "user: "; 
     getline(cin,word) ;
     int end = word.find_first_of(" ") ;
     while(end != -1){
-    if(word.substr(start,end-start) == "reservation"){
+    if(word.substr(start,end-start) == "want"){
         reservation() ;
         end = word.find_first_of(" ") ;
         break ;
