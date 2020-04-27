@@ -12,13 +12,13 @@ using namespace std ;
 
 void Shownamehotel(){
 
-    cout << "                           **************************************************************\n" ;
-    cout << "                           * *  *                                                  *  * *\n" ;
-    cout << "                           **  *                                                    *  **\n" ;
-    cout << "                           * *                 Compro project Hotel                   * *\n";
-    cout << "                           **  *                                                    *  **\n" ;
-    cout << "                           * *  *                                                  *  * *\n" ;
-    cout << "                           **************************************************************\n" ;
+    cout << "                                                            **************************************************************\n" ;
+    cout << "                                                            * *  *                                                  *  * *\n" ;
+    cout << "                                                            **  *                                                    *  **\n" ;
+    cout << "                                                            * *                 Compro project Hotel                   * *\n";
+    cout << "                                                            **  *                                                    *  **\n" ;
+    cout << "                                                            * *  *                                                  *  * *\n" ;
+    cout << "                                                            **************************************************************\n" ;
     
 }
 
@@ -63,27 +63,10 @@ void moveText(string inputStr, int scrLen)
         }
     }
 }
-
-int main(){
+void reservation(){
     int age , hmn , room , hmr ,room1 ,room2, sum1,sum2 ,total ,yn,g ;
     string name ,surname, wf ,number ;
     string space = "                           " ;
-    system("mode 0,0");
-    system("COLOR 9F");
-    string textline ;
-    ifstream source ;
-    vector <string> nameroom ;
-    vector <float> roompass ;
-    source.open("room39.txt") ;
-    while(getline(source,textline)){
-        char format[] = "%[^:]: %f" ;
-        char room[100] ;
-        float pass , b , c ;
-        sscanf(textline.c_str(),format,room,&pass) ;
-        nameroom.push_back(room) ;
-        roompass.push_back(pass) ;
-    }
-
     do
     {
         system("cls");
@@ -161,17 +144,6 @@ int main(){
             cout<< space << " 1. A double room. : "<<room1<<endl ;
             cout<< space << " 2. A twin room. : "<<room2<<endl ;
             cout<< space << "Price : "<<total<<" bath"<<endl ;
-            room2 = room2 + 6 ;
-            cout<< space << "your room password is : "<<endl ;
-                for(int i =0 ; i<room1 ; i++){
-                cout<<space << nameroom[i] <<" password is :"<<roompass[i]<<endl ;
-                }
-            
-            
-                for(int j =6 ; j<room2;j++){
-                cout<<space << nameroom[j] <<" password is :"<<roompass[j]<<endl ;
-                }
-            
             cout << endl ;
             cout << space << "**************************************************************" << endl ;
             cout << endl ;
@@ -180,6 +152,38 @@ int main(){
             cin.get();
             moveText("***************THANKS COMPLATION LIST*************Thank you for booking***************",113) ;
         }
+}
+
+int main(){
+    string name ;
+    string word ;
+    int start = 0 ;
+    Shownamehotel() ;
+    cout << "Hotel: Hello can you tell me your name ?\n";
+    cout << "??????:" ;
+    getline(cin,name) ;
+    cout << "Hotel: Is there anything We can help you with ?\n" ;
+    cout << name << ": " ;
+    getline(cin,word) ;
+    int end = word.find_first_of(" ") ;
+    while(end != -1){
+    if(word.substr(start,end-start) == "reservation"){
+        reservation() ;
+        end = word.find_first_of(" ") ;
+        break ;
+        }
+        start = end+1 ;
+        end = word.find_first_of(" ",start);
+    }
+    while(end != -1){
+    if(word.substr(start,end-start) == "description"){
+        cout << "bigloso" ;
+        end = word.find_first_of(" ") ;
+        break ;
+        }
+        start = end+1 ;
+        end = word.find_first_of(" ",start);
+    }
     
     return 0 ;
 }
